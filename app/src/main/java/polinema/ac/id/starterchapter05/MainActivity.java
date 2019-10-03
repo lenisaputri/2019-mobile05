@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (fragment == null || fragment instanceof PushupsFragment || fragment instanceof DipsFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            fragmentTransaction.replace(R.id.fragment_placeholder, new HandstandFragment(), "HANDSTAND_FRAGMENT");
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.fragment_placeholder,new HandstandFragment(),"HANDSTAND_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (fragment == null || fragment instanceof HandstandFragment || fragment instanceof DipsFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            fragmentTransaction.replace(R.id.fragment_placeholder, new PushupsFragment(), "PUSHUPS_FRAGMENT");
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.fragment_placeholder,new PushupsFragment(),"PUSHUPS_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (fragment == null || fragment instanceof HandstandFragment || fragment instanceof PushupsFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            fragmentTransaction.replace(R.id.fragment_placeholder, new DipsFragment(), "DIPS_FRAGMENT");
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.fragment_placeholder,new DipsFragment(),"DIPS_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (fragment == null || fragment instanceof PushupsFragment || fragment instanceof DipsFragment) {
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            fragmentTransaction.replace(R.id.fragment_placeholder, new HandstandFragment(), "HANDSTAND_FRAGMENT");
+            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left,R.anim.exit_from_left,R.anim.enter_from_left,R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.fragment_placeholder,new HandstandFragment(),"HANDSTAND_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
