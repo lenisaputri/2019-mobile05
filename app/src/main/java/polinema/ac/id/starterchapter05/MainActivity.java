@@ -17,6 +17,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fragment fragment= getSupportFragmentManager().findFragmentById(R.id.fragment_placeholder);
+
+        if (fragment == null || fragment instanceof PushupsFragment || fragment instanceof DipsFragment) {
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            fragmentTransaction.replace(R.id.fragment_placeholder, new HandstandFragment(), "HANDSTAND_FRAGMENT");
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
     }
 
     public void click_pushups(View view) {
